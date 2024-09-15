@@ -7,7 +7,7 @@ module Reminder
 
       @schedule = [
         {
-          time: '22:40',
+          time: '7:40',
           title: "Комп'ютерна логіка",
           link: 'https://meet.google.com/ecq-furq-hbq'
         },
@@ -33,7 +33,7 @@ module Reminder
 
     def send_reminder(title, link)
       message = "#{title} \n#{link}"
-      
+
       Reminder::Config.bot.api.send_message(chat_id: Reminder::Config::CHAT_ID, text: message)
     end
   end

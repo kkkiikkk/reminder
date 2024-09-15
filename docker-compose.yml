@@ -1,0 +1,11 @@
+services:
+  reminder:
+    build: .
+    container_name: reminder_service
+    volumes:
+      - .:/app
+    environment:
+      - GROUP_ID=${GROUP_ID}
+      - CHAT_ID=${CHAT_ID}
+      - BOT_TOKEN=${BOT_TOKEN}
+    command: ruby /app/bin/reminder
